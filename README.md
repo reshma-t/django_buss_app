@@ -6,8 +6,6 @@
 
 ### Installing
 
-    $ sudo apt-get install ffmpeg libmysqlclient-dev
-
     $ pip install -r requirements.txt
 
     $ python manage.py migrate
