@@ -1,4 +1,5 @@
 from rest_framework import serializers
+
 from bus_app_api.models import Trip
 
 
@@ -15,3 +16,4 @@ class TripSerializer(serializers.ModelSerializer):
         instance.trip_starting_time = validated_data("trip_starting_time", instance.trip_starting_time)
         instance.save()
         return instance
+    
