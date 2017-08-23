@@ -1,13 +1,16 @@
-Buss App API
+# Buss App API
 
-Download
-$ git clone https://github.com/ReshmaT/django_buss_app.git
+### Download
 
-Installing
+ $ git clone https://github.com/ReshmaT/django_buss_app.git
 
-$ sudo apt-get install ffmpeg libmysqlclient-dev
-$ pip install -r requirements.txt
-$ python manage.py migrate
+### Installing
 
-Running
-$ python manage.py runserver
+    $ sudo apt-get install ffmpeg libmysqlclient-dev
+
+    $ pip install -r requirements.txt
+
+    $ python manage.py migrate
+
+ ### Running
+    $ python manage.py runserver
