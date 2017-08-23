@@ -1,0 +1,5 @@
+*.pyc
+bus_app_api/migrations
+.project
+.pydevproject
+*.log
