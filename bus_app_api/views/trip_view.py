@@ -1,20 +1,23 @@
 import logging
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
 from bus_app_api.models import Trip
 from bus_app_api.serializers import trip_serializer
+
 
 err_logger = logging.getLogger('error_logger')
 
 
 class TripList(APIView):
+
     def get(self, request):
-        trip_object = Trip.objects.all()
-        response_data = trip_serializer(data=trip_object, many=True)
-        return Response(response_data)
+        trip_objects = Trip.objects.all()
+        response_data = trip_serializer.TripSerializer(trip_objects, many=True)
+        return Response(response_data.data)
 
     def post(self, request):
-        serialised_data = trip_serializer.TripSerializer(data = request.data)
+        serialised_data = trip_serializer.TripSerializer(data=request.data)
         if serialised_data.is_valid():
             serialised_data.save()
             return Response("Trip created")

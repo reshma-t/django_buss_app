@@ -10,9 +10,10 @@ err_logger = logging.getLogger('error_logger')
 
 
 class BusStopList(APIView):
+
     def get(self, request):
         bus_stop = BusStop.objects.all()
-        serialised_data = bus_stop_serializer.BusStopSerializer(data=bus_stop, many=True)
+        serialised_data = bus_stop_serializer.BusStopSerializer(bus_stop, many=True)
         return Response(serialised_data.data)
 
     def post(self, request):
@@ -27,6 +28,7 @@ class BusStopList(APIView):
 
 
 class BusStopDetails(APIView):
+
     def get(self, request, pk):
         try:
             bus_stop = BusStop.objects.get(pk=pk)
