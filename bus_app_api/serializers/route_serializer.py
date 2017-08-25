@@ -15,3 +15,4 @@ class RouteSerializer(serializers.ModelSerializer):
         ins.ends_at = validated_data.get("ends_at", ins.ends_at)
         ins.save()
         return ins
+
