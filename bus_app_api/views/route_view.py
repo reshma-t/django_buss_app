@@ -31,8 +31,8 @@ class RouteDetails(APIView):
     def get(self, request, pk):
         try:
             route_object = Route.objects.get(pk=pk)
-            response_data = route_serializer.RouteSerializer(data=route_object)
-            return Response(response_data)
+            response_data = route_serializer.RouteSerializer(route_object)
+            return Response(response_data.data)
         except Route.DoesNotExist:
             err_logger.info(request)
             err_logger.error("Route object does not exist")
