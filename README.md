@@ -1,5 +1,4 @@
-# django_buss_app
-
+# Buss App API
 
 
 ## Download
@@ -11,6 +10,6 @@
     $ pip install -r requirements.txt
 
     $ python manage.py migrate
-## Running
 
+## Running
     $ python manage.py runserver
