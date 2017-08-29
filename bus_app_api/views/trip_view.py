@@ -31,8 +31,8 @@ class TripDetails(APIView):
     def get(self, request, pk):
         try:
             trip_objct = Trip.objects.get(pk=pk)
-            serialised_data = trip_serializer.TripSerializer(data=trip_objct)
-            return Response(serialised_data)
+            serialised_data = trip_serializer.TripSerializer(trip_objct)
+            return Response(serialised_data.data)
         except Trip.DoesNotExist:
             return Response(status=404)
 

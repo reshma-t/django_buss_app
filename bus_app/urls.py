@@ -21,7 +21,7 @@ schema_view = get_swagger_view(title='Bus app API')
 
 
 urlpatterns = [
-    url('^$', schema_view),
+    url('^docs/$', schema_view),
     url(r'^admin/', admin.site.urls),
     url(r'^api/v1/', include('bus_app_api.urls')),
 ]

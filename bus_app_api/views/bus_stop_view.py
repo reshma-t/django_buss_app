@@ -32,8 +32,8 @@ class BusStopDetails(APIView):
     def get(self, request, pk):
         try:
             bus_stop = BusStop.objects.get(pk=pk)
-            serialised_data = bus_stop_serializer.BusStopSerializer(data=bus_stop)
-            return Response(serialised_data)
+            serialised_data = bus_stop_serializer.BusStopSerializer(bus_stop)
+            return Response(serialised_data.data)
         except BusStop.DoesNotExist:
             err_logger.info(request)
             err_logger.error("Bus stop not found")
